@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        .profile-name {
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 10px;
+            color: rgb(0, 137, 201);
+        }
+        .profile-title {
+            text-align: center;
+            font-size: 1rem;
+            color: #555;
+            margin-top: 4px;
+        }
+        .shadow-divider {
+            margin: 24px auto 0 auto;
+            width: 80%;
+            height: 2px;
+            background: rgb(0, 137, 201);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            border: none;
+            display: block;
+        }
+        .summary-section {
+            width: 80%;
+            margin: 32px auto;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(0, 137, 201);
+            margin-bottom: 12px;
+        }
+        .summary-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .projects-section {
+            width: 100%;
+            margin-top: 32px;
+        }
+        .projects-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(0, 137, 201);
+            margin-bottom: 16px;
+            margin-left: 130px;
+        }
+        .carousel-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-images img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,137,201,0.7);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            z-index: 2;
+        }
+        .carousel-btn.left {
+            left: 10px;
+        }
+        .carousel-btn.right {
+            right: 10px;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+            display: block;
+            margin: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 40px;
+            color: #fff;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .modal-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,137,201,0.85);
+            color: #fff;
+            border: none;
+            padding: 0;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 2rem;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: background 0.2s;
+        }
+        .modal-carousel-btn:hover {
+            background: rgba(0,137,201,1);
+        }
+        .modal-carousel-btn.left {
+            left: 40px;
+        }
+        .modal-carousel-btn.right {
+            right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <img src="img/profile.jpg" alt="Profile" class="profile-img">
+    </h1>
+    <div class="profile-name">SAURE, JHON BHENZZON S.</div>
+    <div class="profile-title">FULL STACK WEB DEVELOPER</div>
+    <hr class="shadow-divider">
+
+    <div class="summary-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+            Full Stack Web Developer with 2+ years of experience building responsive web applications
+            using modern technologies such as React, Node.js, and MongoDB. Passionate about creating
+            user-friendly interfaces and scalable back-end systems, and continuously learning
+            new tools and frameworks to improve software quality.
+        </p>
+    </div>
+
+    <hr class="shadow-divider">
+
+    <div class="projects-section">
+        <div class="projects-title">My Projects</div>
+        <div style="width:100%;text-align:center;font-size:1rem;color:#555;margin-bottom:18px;">
+            The projects listed below are works I created during my Capstone, Internship, and Work Experience.
+        </div>
+
+        <!-- Good Habits PH Project -->
+        <div style="width:100%;text-align:center;font-size:1.15rem;font-weight:500;color:#333;margin-bottom:8px;margin-top: 50px;">
+            Good Habits PH – E-commerce Website
+        </div>
+        <div class="carousel-container" id="carouselContainer1">
+            <button class="carousel-btn left" onclick="prevSlide(1)">&#8249;</button>
+            <div class="carousel-images" id="carouselImages1">
+                <img src="img/homepage.PNG" alt="Project 1">
+                <img src="img/menu.PNG" alt="Project 2">
+                <img src="img/cart.PNG" alt="Project 3">
+                <img src="img/checkout.PNG" alt="Project 4">
+                <img src="img/ordersum.PNG" alt="Project 5">
+                <img src="img/yourorder.PNG" alt="Project 6">
+                <img src="img/admin dashborad.PNG" alt="Project 7">
+                <img src="img/store invetory.PNG" alt="Project 8">
+                <img src="img/additem.PNG" alt="Project 9">
+                <img src="img/order list admin.PNG" alt="Project 10">
+                <img src="img/customer order summary.PNG" alt="Project 11">
+                <img src="img/order hisotry.PNG" alt="Project 12">
+                <img src="img/delivery places.PNG" alt="Project 13">
+                <img src="img/customer feedback.PNG" alt="Project 14">
+            </div>
+            <button class="carousel-btn right" onclick="nextSlide(1)">&#8250;</button>
+        </div>
+
+        <div style="width:100%;max-width:700px;margin:32px auto 0 auto;padding:24px;background:#f8f9fa;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#222;">
+            <div style="font-size:1.15rem;font-weight:600;margin-bottom:10px;color:rgb(0,137,201);">Overview:</div>
+            <div style="margin-bottom:16px;">
+                Good Habits PH is a Filipino-owned e-commerce platform specializing in health and wellness products. The website showcases a variety of items aimed at promoting a balanced and mindful lifestyle.
+            </div>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Key Features:</div>
+            <ul style="margin-bottom:16px;padding-left:20px;">
+                <li><strong>Product Catalog:</strong> Displays a curated selection of wellness products, such Healthy Foods, Drinks and Snacks.</li>
+                <li><strong>User-Friendly Interface:</strong> Designed for easy navigation, ensuring a smooth browsing experience.</li>
+                <li><strong>Checkout Simulation:</strong> Demonstrates the purchase flow using GCash screenshots (no real payment integration).</li>
+                <li><strong>Responsive Design:</strong> Optimized for both desktop and mobile devices.</li>
+            </ul>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Technologies Used:</div>
+            <ul style="margin-bottom:16px;padding-left:20px;">
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Backend:</strong> PHP, MySQL</li>
+                <li><strong>Frameworks / Libraries:</strong> Bootstrap for responsive design</li>
+            </ul>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Role:</div>
+            <div style="margin-bottom:16px;">
+                As the lead developer, I handled full-stack development including front-end design, back-end integration, and deployment.
+            </div>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Links:</div>
+            <div style="margin-bottom:8px;">
+                <a href="https://goodhabitsph.com/index.html" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">Visit Good Habits PH</a>
+            </div>
+            <div>
+                <a href="https://github.com/jhonbhenzzon/goodhabitsph" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+
+        <hr class="shadow-divider">
+
+        <!-- GNL OS Project -->
+        <div style="width:100%;text-align:center;font-size:1.15rem;font-weight:500;color:#333;margin-bottom:8px;margin-top: 50px;">
+            GNL Operating System (GNL OS) – Internal Operations Management System
+        </div>
+        <div class="carousel-container" id="carouselContainer2">
+            <button class="carousel-btn left" onclick="prevSlide(2)">&#8249;</button>
+            <div class="carousel-images" id="carouselImages2">
+                <img src="img/gnlhomepage.PNG" alt="Project 1">
+                <img src="img/loginpage.PNG" alt="Project 2">
+                <img src="img/eng_homepage.PNG" alt="Project 3">
+                <img src="img/modal_requestform.PNG" alt="Project 4">
+                <img src="img/purchasingUi.PNG" alt="Project 5">
+                <img src="img/request_list.PNG" alt="Project 6">
+                <img src="img/list of data.PNG" alt="Project 7">
+                <img src="img/create_po.PNG" alt="Project 8">
+                <img src="img/Creating_po.PNG" alt="Project 9">
+                <img src="img/Oe.PNG" alt="Project 10">
+                <img src="img/admin_interface.PNG" alt="Project 11">
+                <img src="img/project_analytics.PNG" alt="Project 12">
+                <img src="img/list of data.PNG" alt="Project 13">
+                <img src="img/requested_data.PNG" alt="Project 14">
+                <img src="img/approved.PNG" alt="Project 15">
+                <img src="img/released.PNG" alt="Project 16">
+            </div>
+            <button class="carousel-btn right" onclick="nextSlide(2)">&#8250;</button>
+        </div>
+
+        <div style="width:100%;max-width:700px;margin:32px auto 0 auto;padding:24px;background:#f8f9fa;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#222;">
+            <div style="font-size:1.15rem;font-weight:600;margin-bottom:10px;color:rgb(0,137,201);">Overview:</div>
+            <div style="margin-bottom:16px;">
+                The GNL Operating System (GNL OS) is a web-based system developed to streamline and automate GNL’s internal operations. It centralizes multiple workflows, improving efficiency, accountability, and communication within the organization.
+            </div>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Key Features:</div>
+            <ul style="margin-bottom:16px;padding-left:20px;">
+                <li><strong>Material Requests:</strong> Engineers can submit material requests, which are routed to the office interface. Staff select suppliers, create Purchase Orders (POs), and forward them to the admin for approval and material release.</li>
+                <li><strong>Other Requests:</strong> Manages operational needs such as reimbursements, payroll, miscellaneous requests, immediate requests, utilities, and office expenses. Each follows a workflow of submission, processing, approval, and release.</li>
+                <li><strong>Workflow Automation:</strong> Ensures all requests are tracked, processed efficiently, and approved systematically to maintain accountability.</li>
+                <li><strong>User-Friendly Interface:</strong> Clear dashboards for engineers, staff, and admins to manage their respective tasks easily.</li>
+            </ul>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Technologies Used:</div>
+            <ul style="margin-bottom:16px;padding-left:20px;">
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Backend:</strong> PHP, MySQL</li>
+                <li><strong>Frameworks / Libraries:</strong> Bootstrap for responsive design</li>
+            </ul>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Role:</div>
+            <div style="margin-bottom:16px;">
+                As the lead developer, I handled full-stack development including front-end design, back-end integration, and deployment.
+            </div>
+            <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Links:</div>
+            <div style="margin-bottom:8px;">
+                <a href="https://opsgnl.goodhabitsph.com/" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">Visit GNL Operation</a>
+            </div>
+            <div>
+                <a href="https://github.com/jhonbhenzzon/goodhabitsph" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+
+        <hr class="shadow-divider">
+
+        <!-- Capstone Project -->
+        <!-- ...existing code... -->
+<div style="width:100%;text-align:center;font-size:1.15rem;font-weight:500;color:#333;margin-bottom:8px;margin-top: 50px;">
+    Capstone Project – Multi-Language Programming Learning and Challenge Platform.
+</div>
+<div class="carousel-container" id="carouselContainer3">
+    <button class="carousel-btn left" onclick="prevSlide(3)">&#8249;</button>
+    <div class="carousel-images" id="carouselImages3">
+        <img src="img/loginlearnit.PNG" alt="Dashboard">
+        <img src="img/userdashboard.PNG" alt="Students List">
+        <img src="img/learntab.PNG" alt="Learn Tab">
+        <img src="img/lessonlist.PNG" alt="Lesson List">
+        <img src="img/assessment page.PNG" alt="Assessment Page">
+        <img src="img/coding assessment.PNG" alt="Coding Assessment">
+        <img src="img/leaderboards.PNG" alt="Leaderboards">
+        <img src="img/library.PNG" alt="Library">
+        <img src="img/profilelearnit.PNG" alt="Profile">
+        <img src="img/consultationpage.PNG" alt="Consultation">
+        <img src="img/admin dashboard.PNG" alt="Admin Dashboard">
+        <img src="img/usermanager.PNG" alt="User Manager">
+        <img src="img/content creator.PNG" alt="Content Creator">
+        <img src="img/test tracker.PNG" alt="Test Tracker">
+    </div>
+    <button class="carousel-btn right" onclick="nextSlide(3)">&#8250;</button>
+</div>
+
+<div style="width:100%;max-width:700px;margin:32px auto 0 auto;padding:24px;background:#f8f9fa;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#222;">
+    <div style="font-size:1.15rem;font-weight:600;margin-bottom:10px;color:rgb(0,137,201);">Overview:</div>
+    <div style="margin-bottom:16px;">
+        The Learn IT platform is a web application designed to enhance the learning experience for students while providing admins with comprehensive management tools. The platform allows students to access content, take assessments (including coding challenges), and track their performance, while admins can manage users, communicate, and oversee all operations efficiently.
+    </div>
+    <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Key Features:</div>
+    <ul style="margin-bottom:16px;padding-left:20px;">
+        <li><strong>Content &amp; Assessments:</strong> Admins create learning content, which is displayed on the student interface. Students can take assessments, including coding tests.</li>
+        <li><strong>Leaderboards:</strong> Students are ranked based on their performance, encouraging engagement and healthy competition.</li>
+        <li><strong>Profile Management &amp; Consultation:</strong> Students can edit their profile and consult with admins regarding failed exams or queries. Admins can communicate with students via a built-in messaging/chat system.</li>
+        <li><strong>User Management:</strong> Admins can add, edit, and manage student and staff accounts efficiently.</li>
+        <li><strong>Built-in Code Compiler:</strong> Supports HTML, CSS, JavaScript, Python, C#, and Java, enabling students to practice and submit coding assessments directly on the platform.</li>
+        <li><strong>Responsive Design:</strong> Optimized for both desktop and mobile devices.</li>
+    </ul>
+    <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Technologies Used:</div>
+    <ul style="margin-bottom:16px;padding-left:20px;">
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Backend:</strong> PHP, MySQL</li>
+        <li><strong>Frameworks / Libraries:</strong> Bootstrap</li>
+    </ul>
+    <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Role:</div>
+    <div style="margin-bottom:16px;">
+        As the lead developer, I implemented the full-stack system, including database architecture, student and admin dashboards, assessment workflows, messaging system, and integrated code compiler.
+    </div>
+    <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Links:</div>
+    <div style="margin-bottom:8px;">
+        <a href="#" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">Visit Online Learning &amp; Assessment System</a>
+    </div>
+    <div>
+        <a href="#" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">GitHub Repository</a>
+    </div>
+</div>
+<!-- ...existing code... -->
+
+        <hr class="shadow-divider">
+    </div>
+
+    <!-- Modal for enlarged image with carousel buttons -->
+    <div class="modal" id="imgModal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-content-wrapper">
+            <button class="modal-carousel-btn left" onclick="modalPrev(event)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <img class="modal-content" id="modalImg" src="" alt="Enlarged Project">
+            <button class="modal-carousel-btn right" onclick="modalNext(event)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- ...existing code... -->
+<!-- Add this before </body> -->
+
+
+<footer style="width:100%;background:rgb(0,137,201);color:#fff;padding:32px 0 24px 0;margin-top:48px;">
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+        <div style="font-size:1.25rem;font-weight:600;margin-bottom:12px;">Connect with me</div>
+        <div style="margin-bottom:16px;">
+            <a href="https://www.facebook.com/bhenzzon.saure.33/" target="_blank" style="color:#fff;text-decoration:none;margin:0 10px;">
+                <i class="fab fa-facebook fa-lg" style="vertical-align:middle;margin-right:6px;"></i>Facebook
+            </a>
+            <a href="https://linkedin.com/in/jhonbhenzzon" target="_blank" style="color:#fff;text-decoration:none;margin:0 10px;">
+                <i class="fab fa-linkedin fa-lg" style="vertical-align:middle;margin-right:6px;"></i>LinkedIn
+            </a>
+            <a href="https://github.com/jhonbhenzzon" target="_blank" style="color:#fff;text-decoration:none;margin:0 10px;">
+                <i class="fab fa-github fa-lg" style="vertical-align:middle;margin-right:6px;"></i>GitHub
+            </a>
+        </div>
+        <div style="margin-bottom:8px;">
+            <span style="font-weight:500;">
+                <i class="fas fa-map-marker-alt" style="vertical-align:middle;margin-right:4px;"></i>
+                Address:</span> Poblacion, Muntinlupa City, Philippines
+        </div>
+        <div style="margin-bottom:8px;">
+            <span style="font-weight:500;">
+                <i class="fas fa-phone" style="vertical-align:middle;margin-right:4px;"></i>
+                Contact Number:</span> 0969-558-5209
+        </div>
+        <div>
+            <span style="font-weight:500;">
+                <i class="fas fa-envelope" style="vertical-align:middle;margin-right:4px;"></i>
+                Email:</span> <a href="mailto:jhonbhenzzon@gmail.com" style="color:#fff;text-decoration:underline;">jhonbhenzzon@gmail.com</a>
+        </div>
+    </div>
+</footer>
+<!-- ...existing code... -->
+    <script>
+        // Carousel state for each project
+        const carousels = [
+            {
+                images: Array.from(document.querySelectorAll('#carouselImages1 img')),
+                container: document.getElementById('carouselImages1'),
+                currentIndex: 0
+            },
+            {
+                images: Array.from(document.querySelectorAll('#carouselImages2 img')),
+                container: document.getElementById('carouselImages2'),
+                currentIndex: 0
+            },
+            {
+                images: Array.from(document.querySelectorAll('#carouselImages3 img')),
+                container: document.getElementById('carouselImages3'),
+                currentIndex: 0
+            }
+        ];
+
+        // Show slide for a specific carousel
+        function showSlide(carouselNum, index) {
+            const carousel = carousels[carouselNum - 1];
+            const total = carousel.images.length;
+            if (index < 0) index = total - 1;
+            if (index >= total) index = 0;
+            carousel.container.style.transform = `translateX(-${index * 100}%)`;
+            carousel.currentIndex = index;
+        }
+
+        function prevSlide(carouselNum) {
+            showSlide(carouselNum, carousels[carouselNum - 1].currentIndex - 1);
+        }
+
+        function nextSlide(carouselNum) {
+            showSlide(carouselNum, carousels[carouselNum - 1].currentIndex + 1);
+        }
+
+        // Modal state
+        let modalCarouselNum = 1;
+        let modalIndex = 0;
+
+        // Make images clickable for modal (all carousels)
+        carousels.forEach((carousel, idx) => {
+            carousel.images.forEach((img, imgIdx) => {
+                img.addEventListener('click', function() {
+                    document.getElementById('modalImg').src = this.src;
+                    document.getElementById('imgModal').style.display = 'flex';
+                    modalCarouselNum = idx + 1;
+                    modalIndex = imgIdx;
+                });
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('imgModal').style.display = 'none';
+            document.getElementById('modalImg').src = '';
+        }
+
+        // Modal carousel navigation
+        function modalPrev(e) {
+            e.stopPropagation();
+            const carousel = carousels[modalCarouselNum - 1];
+            modalIndex = (modalIndex - 1 + carousel.images.length) % carousel.images.length;
+            document.getElementById('modalImg').src = carousel.images[modalIndex].src;
+        }
+
+        function modalNext(e) {
+            e.stopPropagation();
+            const carousel = carousels[modalCarouselNum - 1];
+            modalIndex = (modalIndex + 1) % carousel.images.length;
+            document.getElementById('modalImg').src = carousel.images[modalIndex].src;
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imgModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Initialize all carousels
+        showSlide(1, 0);
+        showSlide(2, 0);
+        showSlide(3, 0);
+    </script>
+</body>
+</html>

@@ -530,6 +530,7 @@ html {
     max-width: none;   /* allow exceeding parent */
     height: 30;
     object-fit: contain;
+    margin-top: 20px;
   }
 
   /* Project info below carousel */
@@ -557,6 +558,7 @@ html {
     color: #333;
     transition: color 0.3s;
     z-index: 1001;  /* above the image */
+    margin-top:10px;
   }
 
   .close-btn:hover {

@@ -479,50 +479,68 @@ html {
   text-decoration: underline;
 }
 /* 📱 Mobile Responsive Modal */
+/* 📱 Mobile-specific modal tweaks */
 @media (max-width: 768px) {
   .modal-content.wide {
     flex-direction: column;
-    height: 95vh; /* a bit taller to accommodate image */
-    padding: 20px;
+    width: 100vw;
+    height: 100vh;       /* fullscreen modal */
+    padding: 10px;
+    border-radius: 0;
+    justify-content: flex-start;
+    align-items: center;
     overflow: hidden;
   }
 
   .modal-body {
     flex-direction: column;
-    gap: 20px;
     width: 100%;
     height: 100%;
-  }
-
-  .carousel-wrapper,
-  .project-info {
-    width: 100%;
-    max-width: 100%;
+    gap: 10px;
   }
 
   .carousel-wrapper {
-    margin-bottom: 10px;
-    flex: 0 0 auto; /* prevents shrinking */
-  }
-
-  .project-info {
-    overflow-y: auto;
-    max-height: 45vh; /* enough for scrolling text */
-    padding: 0 10px;
+    width: 100%;
+    height: auto;          /* allow height to expand */
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;     /* allow image to grow outside wrapper */
   }
 
   .carousel {
     width: 100%;
-    height: 50vh; /* fixed visible height for mobile, landscape style */
-    border-radius: 12px;
+    height: auto;          /* no fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;     /* don't crop image */
+  }
+ .carousel-container {
+    max-width: 100%;   /* let it expand */
+    flex: 0 0 auto;
+    overflow: visible; /* allow image to grow beyond container */
+    width: 100%;
+    height: auto;      /* allow height to adjust */
   }
 
   .carousel-images img {
-    width: 100%;
-    height: 100%; /* fill container */
-    object-fit: cover; /* maintain landscape crop */
+    width: 50;       /* natural width or larger */
+    max-width: none;   /* allow exceeding parent */
+    height: 30;
+    object-fit: contain;
   }
 
+  /* Project info below carousel */
+  .project-info {
+    width: 100%;
+    max-height: 25vh;      /* scrollable text if needed */
+    overflow-y: auto;
+    padding: 5px 10px;
+  }
+
+  /* Carousel buttons adjustments */
   .carousel-btn.prev {
     left: 10px;
   }
@@ -530,7 +548,22 @@ html {
   .carousel-btn.next {
     right: 10px;
   }
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+    z-index: 1001;  /* above the image */
+  }
+
+  .close-btn:hover {
+    color: #007bff;
+  }
 }
+
 
 #resume {
   background: #fff;

@@ -311,13 +311,13 @@ dtr: {
   images: [
     "./assets/dtrsystem/Login_employee.PNG",
     "./assets/dtrsystem/Loginform_employee.PNG",
-    "./assets/dtrsystem/Employee_Dashboard.PNG",
+    "./assets/dtrsystem/Employee_dashboard.PNG",
     "./assets/dtrsystem/employee_attendance.PNG",
     "./assets/dtrsystem/admin_dashboard.PNG",
     "./assets/dtrsystem/employee_list.PNG",
     "./assets/dtrsystem/edit_employee.PNG",
     "./assets/dtrsystem/insert_employee.PNG",
-    "./assets/dtrsystem/payroll_)generator.PNG",
+    "./assets/dtrsystem/payroll_generator.PNG",
 
   ],
   details: `
@@ -392,3 +392,4 @@ dtr: {
     slides[currentSlide].classList.add("active");
   }
 });
+

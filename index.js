@@ -311,7 +311,7 @@ dtr: {
   images: [
     "./assets/dtrsystem/Login_employee.PNG",
     "./assets/dtrsystem/Loginform_employee.PNG",
-    "./assets/dtrsystem/Employee_dashboard.PNG",
+    "./assets/dtrsystem/employee_dashboard.PNG",
     "./assets/dtrsystem/employee_attendance.PNG",
     "./assets/dtrsystem/admin_dashboard.PNG",
     "./assets/dtrsystem/employee_list.PNG",
@@ -392,4 +392,5 @@ dtr: {
     slides[currentSlide].classList.add("active");
   }
 });
+
 

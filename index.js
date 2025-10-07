@@ -68,6 +68,11 @@ const projectData = {
     "./assets/gnlops/gnlhomepage.PNG",
     "./assets/gnlops/request.PNG",
     "./assets/gnlops/tracker.PNG"
+  ],
+   dtr: [
+    "./assets/dtrsystem/Login_employee.PNG",
+    "./assets/dtrsystem/Loginform_employee.PNG",
+    "./assets/dtrsystem/Employee_dashboard.PNG"
   ]
 };
 
@@ -300,7 +305,53 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   `
+},
+
+dtr: {
+  images: [
+    "./assets/dtrsystem/Login_employee.PNG",
+    "./assets/dtrsystem/Loginform_employee.PNG",
+    "./assets/dtrsystem/Employee_Dashboard.PNG",
+    "./assets/dtrsystem/employee_attendance.PNG",
+    "./assets/dtrsystem/admin_dashboard.PNG",
+    "./assets/dtrsystem/employee_list.PNG",
+    "./assets/dtrsystem/edit_employee.PNG",
+    "./assets/dtrsystem/insert_employee.PNG",
+    "./assets/dtrsystem/payroll_)generator.PNG",
+
+  ],
+  details: `
+    <h3>Daily Time Record (DTR) System</h3>
+    <div style="width:100%;max-width:700px;margin:32px auto 0 auto;padding:24px;background:#f8f9fa;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#222;">
+      <div style="font-size:1.15rem;font-weight:600;margin-bottom:10px;color:rgb(0,137,201);">Overview:</div>
+      <div style="margin-bottom:16px;">
+        A web-based Daily Time Record (DTR) system designed to efficiently track employee attendance, working hours, and generate automated monthly reports for payroll purposes.
+      </div>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Key Features:</div>
+      <ul style="margin-bottom:16px;padding-left:20px;">
+        <li><strong>Attendance Tracking:</strong> Employees can clock in/out and record breaks seamlessly.</li>
+        <li><strong>Reports:</strong> Generate monthly attendance and hours worked reports.</li>
+        <li><strong>Admin Dashboard:</strong> Admins can monitor attendance, approve adjustments, and manage employee records.</li>
+        <li><strong>User-Friendly Interface:</strong> Simple dashboards for employees and administrators for easy navigation.</li>
+      </ul>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Technologies Used:</div>
+      <ul style="margin-bottom:16px;padding-left:20px;">
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript & React</li>
+        <li><strong>Backend:</strong> PHP, MySQL</li>
+        <li><strong>Frameworks / Libraries:</strong> Bootstrap for responsive design</li>
+      </ul>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Role:</div>
+      <div style="margin-bottom:16px;">
+        As the lead developer, I managed full-stack development including front-end design, back-end integration, and system deployment.
+      </div>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Links:</div>
+      <div>
+        <a href="https://github.com/bhenzzon-dev/DTRsystem" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">GitHub Repository</a>
+      </div>
+    </div>
+  `
 }
+
   };
 
   // 🖱️ Open modal on "View Project"

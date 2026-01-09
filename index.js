@@ -54,6 +54,11 @@ window.addEventListener("resize", handleScroll);
 
   // 📁 All project data here
 const projectData = {
+  waterfun: [
+  "./assets/waterfun/pms1.PNG",
+  "./assets/waterfun/pms2.PNG",
+  "./assets/waterfun/pms3.PNG"
+],
   goodhabits: [
     "./assets/goodhabits/homepage.PNG",
     "./assets/goodhabits/additem.PNG",
@@ -79,18 +84,10 @@ const projectData = {
 // Elements
 const modal = document.getElementById("projectModal");
 const closeBtn = document.querySelector(".close-btn");
-const projectLinks = document.querySelectorAll(".project-link");
 const carouselImagesContainer = document.querySelector(".carousel-images");
 
 // Open modal + load project data
-projectLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const projectId = link.getAttribute("data-project");
-    loadProjectImages(projectId);
-    modal.classList.add("show");
-  });
-});
+
 
 // Close modal
 closeBtn.addEventListener("click", () => modal.classList.remove("show"));
@@ -146,6 +143,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 📦 Project data (carousel + description)
   const projects = {
+    waterfun: {
+  images: [
+    "./assets/waterfun/pms1.PNG",
+    "./assets/waterfun/pms2.PNG",
+    "./assets/waterfun/pms3.PNG",
+    "./assets/waterfun/pms4.PNG",
+    "./assets/waterfun/pms5.PNG",
+    "./assets/waterfun/pms6.PNG",
+    "./assets/waterfun/pms7.PNG",
+    "./assets/waterfun/pms8.PNG",
+    "./assets/waterfun/pms9.PNG",
+    "./assets/waterfun/pms10.PNG",
+    "./assets/waterfun/pms11.PNG",
+    "./assets/waterfun/pms12.PNG",
+    "./assets/waterfun/pms13.PNG",
+    "./assets/waterfun/pms14.PNG",
+    "./assets/waterfun/pms15.PNG",
+    "./assets/waterfun/pms16.PNG",
+    "./assets/waterfun/pms17.PNG",
+    "./assets/waterfun/pms18.PNG",
+    "./assets/waterfun/pms19.PNG"
+  ],
+  details: `
+    <h3>Water Fun Condominium – Tenant & Landlord Payment System</h3>
+    <div style="width:100%;max-width:700px;margin:32px auto 0 auto;padding:24px;background:#f8f9fa;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);color:#222;">
+      <div style="font-size:1.15rem;font-weight:600;margin-bottom:10px;color:rgb(0,137,201);">Overview:</div>
+      <div style="margin-bottom:16px;">
+        A secure and user-friendly payment platform for Water Fun Condominium, enabling tenants to pay rent online and landlords to manage payments efficiently.
+        Real-time notifications and automated receipts ensure smooth transactions.
+      </div>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Key Features:</div>
+      <ul style="margin-bottom:16px;padding-left:20px;">
+        <li><strong>Tenant Dashboard:</strong> View pending payments, payment history, and generate receipts.</li>
+        <li><strong>Landlord Dashboard:</strong> Track tenant payments, monthly summaries, and manage properties.</li>
+        <li><strong>Automated Notifications:</strong> Email/SMS alerts for upcoming or missed payments.</li>
+        <li><strong>Secure Transactions:</strong> Ensures data protection and payment security.</li>
+        <li><strong>Responsive Design:</strong> Accessible on desktop, tablet, and mobile devices.</li>
+      </ul>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Technologies Used:</div>
+      <ul style="margin-bottom:16px;padding-left:20px;">
+        <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Backend:</strong> PHP, MySQL</li>
+        <li><strong>Frameworks / Libraries:</strong> Bootstrap for responsive design</li>
+      </ul>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Role:</div>
+      <div style="margin-bottom:16px;">
+        Lead developer responsible for full-stack development, payment integration, and dashboard implementation.
+      </div>
+      <div style="font-size:1.08rem;font-weight:600;margin-bottom:8px;color:rgb(0,137,201);">Links:</div>
+      <div style="margin-bottom:8px;">
+        <a href="#" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">Live Demo</a>
+      </div>
+      <div>
+        <a href="#" style="color:rgb(0,137,201);text-decoration:none;font-weight:500;" target="_blank">GitHub Repository</a>
+      </div>
+    </div>
+  `
+},
     goodhabits: {
       images: [
         "./assets/goodhabits/homepage.PNG",
@@ -311,13 +366,13 @@ dtr: {
   images: [
     "./assets/dtrsystem/Login_employee.PNG",
     "./assets/dtrsystem/Loginform_employee.PNG",
-    "./assets/dtrsystem/employee_dashboard.PNG",
+    "./assets/dtrsystem/Employee_Dashboard.PNG",
     "./assets/dtrsystem/employee_attendance.PNG",
     "./assets/dtrsystem/admin_dashboard.PNG",
     "./assets/dtrsystem/employee_list.PNG",
     "./assets/dtrsystem/edit_employee.PNG",
     "./assets/dtrsystem/insert_employee.PNG",
-    "./assets/dtrsystem/payroll_generator.PNG",
+    "./assets/dtrsystem/payroll_)generator.PNG",
 
   ],
   details: `
@@ -392,5 +447,3 @@ dtr: {
     slides[currentSlide].classList.add("active");
   }
 });
-
-
